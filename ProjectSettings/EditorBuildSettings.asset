@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 5a95095b6bd8a4336a36648557a35c1b
+  - enabled: 1
+    path: Assets/Scenes/EnemyFollow.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/EnemyPatrol.unity
+    guid: dd668c7cd202d4f3ab0492bb7a4e2402
+  - enabled: 1
+    path: Assets/Scenes/EnemyShoot.unity
+    guid: a8dfe7a0df379464faa07d4b5c4d3914
+  - enabled: 1
+    path: Assets/Scenes/SpyGame.unity
+    guid: a44fa79c6eded4429a6367450d77078a
   m_configObjects: {}
