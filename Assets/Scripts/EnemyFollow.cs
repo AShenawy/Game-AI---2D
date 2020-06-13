@@ -5,9 +5,9 @@ using UnityEngine;
 // This script makes an enemy character run after the player
 public class EnemyFollow : MonoBehaviour
 {
-    public float speed;     // Set enemy speed
-    public float stoppingDistance;      // when following target, set how far away from it the enemy should stop
-    public float retreatDistance;       // when approached by target, set at what distance the enemy should back away from target
+    public float speed;     // enemy speed
+    public float stoppingDistance;      // when following target, how far away from it the enemy should stop
+    public float retreatDistance;       // when approached by target, at what distance the enemy should back away from target
 
     private Transform target;       // The target to follow
 

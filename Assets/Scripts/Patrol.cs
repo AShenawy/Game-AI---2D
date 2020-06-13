@@ -6,8 +6,8 @@ using UnityEngine;
 // This script makes the enemy character randomly patrol within a set area range
 public class Patrol : MonoBehaviour
 {
-    public float speed;     // Set enemy speed
-    public float startWaitTime;     // Set how long before moving to the next spot
+    public float speed;     // movement speed
+    public float startWaitTime;     // how long before moving to the next spot
     private float waitTime;         // countdown timer
 
     public Transform moveSpot;      // the target spot the enemy will move to

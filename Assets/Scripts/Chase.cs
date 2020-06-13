@@ -2,78 +2,74 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script makes the enemy character chase the player in Spy Game scene
 public class Chase : MonoBehaviour
 {
-    private Patrol PatrolScript;
-
-    public float speed;
+    public float speed;     // enemy move speed
 
     [SerializeField]
-    bool isChasing = false;
+    private bool isChasing = false;     // set whether enemy is chasing player or not
 
-    Transform player;
+    private Transform player;       // reference to player character
 
+    public GameObject gameOverPanel;    // reference to game over UI panel
 
-    public GameObject GameOverPanel;
-
+    private Patrol patrolScript;    // reference to enemy patrol script
 
 
     // Start is called before the first frame update
     void Start()
     {
-        PatrolScript = this.GetComponent<Patrol>();
+        // find the patrol script component on the enemy character
+        patrolScript = this.GetComponent<Patrol>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // if isChasing bool is set to true, chase the player
         if (isChasing)
         {
             ChaseThePlayer();
-        }
-        else if (!isChasing)
-        {
-
         }
     }
 
     void ChaseThePlayer()
     {
+        // make the enemy run after player character
         transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D target)
     {
+        // if character tagged player enters enemy trigger radius, enemy sets the player as their chase target, 
+        // sets chasing to true, and then disables the patrol script to stop patrolling
         if (target.CompareTag("Player"))
         {
             player = target.transform;
             isChasing = true;
-            PatrolScript.enabled = false;
+            patrolScript.enabled = false;
         }
     }
-
-    private void OnTriggerStay2D(Collider2D target)
-    {
-        if (target.CompareTag("Player"))
-        {
-            player = target.transform;
-        }
-    }
-
-    
 
     private void OnTriggerExit2D(Collider2D target)
     {
+        // if player exits the trigger radius of enemy, enemy stops chasing player and
+        // reenables patrolling script
         if (target.CompareTag("Player"))
         {
             isChasing = false;
-            PatrolScript.enabled = true;
+            patrolScript.enabled = true;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Time.timeScale = 0.00f;
-        GameOverPanel.active = true;
+        // if enemy collides with player character, freeze game and activate game over UI panel (loss)
+        if (collision.transform.CompareTag("Player"))
+        {
+            Time.timeScale = 0.00f;
+            gameOverPanel.SetActive(true);
+        }
     }
 }
