@@ -53,5 +53,5 @@ In this project’s example, the AI is an armed guard which starts in Idle state
 * Abdelsalam Mohamed Abdelwahab Megahed
 
 ## Acknowledgments
-* AI video tutorials by Noa (aka Blackthornprod)
-* Finite State Machines by Penny de Byl PHD
+* AI video tutorials by Noa (aka Blackthornprod) - [link](https://www.youtube.com/playlist?list=PLBIb_auVtBwDgHLhYc-NG633rTbTPim9z)
+* Finite State Machines by Penny de Byl PHD - [link](https://learn.unity.com/project/finite-state-machines-1?uv=2019.3&courseId=5dd851beedbc2a1bf7b72bed)
