@@ -1125,6 +1125,16 @@ PrefabInstance:
       propertyPath: m_ClearFlags
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3523726435941233081, guid: 6478176b8cb434cba99100779c3a0ff2,
+        type: 3}
+      propertyPath: m_WalkSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3523726435941233081, guid: 6478176b8cb434cba99100779c3a0ff2,
+        type: 3}
+      propertyPath: m_RunSpeed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6478176b8cb434cba99100779c3a0ff2, type: 3}
 --- !u!1001 &547984618

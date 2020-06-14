@@ -5,12 +5,12 @@ using UnityEngine;
 using UnityEngine.AI;
 
 // This class is responsible for the AI patrolling state
-public class Patrol : State
+public class StatePatrol : State
 {
     private int currentIndex;      // reference to the waypoints index counter
 
     // setup inherited constructor
-    public Patrol(GameObject _npc, NavMeshAgent _agent, Animator _anim, Transform _player)
+    public StatePatrol(GameObject _npc, NavMeshAgent _agent, Animator _anim, Transform _player)
             : base(_npc, _agent, _anim, _player)
     {
         name = STATE.PATROL;    // set the name of this state
@@ -60,7 +60,7 @@ public class Patrol : State
         // if AI saw the player, then exit patrol state and start chasing
         if (CanSeePlayer())
         {
-            nextState = new Pursue(npc, agent, anim, player);
+            nextState = new StatePursue(npc, agent, anim, player);
             stage = EVENT.EXIT;
         }
     }

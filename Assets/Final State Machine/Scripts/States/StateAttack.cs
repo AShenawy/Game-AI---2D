@@ -3,13 +3,13 @@ using System.Collections;
 using UnityEngine.AI;
 
 // This class is responsible for the AI attacking state
-public class Attack : State
+public class StateAttack : State
 {
     private float rotationSpeed = 7f;   // how fast the AI rotates to look at player
     private AudioSource shootAudio;
 
     // setup inherited constructor
-    public Attack(GameObject _npc, NavMeshAgent _agent, Animator _anim, Transform _player)
+    public StateAttack(GameObject _npc, NavMeshAgent _agent, Animator _anim, Transform _player)
             : base(_npc, _agent, _anim, _player)
     {
         name = STATE.ATTACK;    // set the name of this state
@@ -37,13 +37,13 @@ public class Attack : State
         // if player is out of AI's attack range but AI can still see them, then move to chasing state
         if (!CanAttackPlayer() && CanSeePlayer())
         {
-            nextState = new Pursue(npc, agent, anim, player);
+            nextState = new StatePursue(npc, agent, anim, player);
             stage = EVENT.EXIT;
         }
         // if AI lost sight of the player, then exit state and go idle
         else if (!CanSeePlayer())
         {
-            nextState = new Idle(npc, agent, anim, player);
+            nextState = new StateIdle(npc, agent, anim, player);
             stage = EVENT.EXIT;
         }
     }

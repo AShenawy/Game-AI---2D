@@ -5,10 +5,10 @@ using UnityEngine;
 using UnityEngine.AI;
 
 // This class is responsible for the AI pursuing/chasing state
-public class Pursue : State
+public class StatePursue : State
 {
     // setup inherited constructor
-    public Pursue(GameObject _npc, NavMeshAgent _agent, Animator _anim, Transform _player)
+    public StatePursue(GameObject _npc, NavMeshAgent _agent, Animator _anim, Transform _player)
             : base(_npc, _agent, _anim, _player)
     {
         name = STATE.PURSUE;    // set the name of this state
@@ -33,13 +33,13 @@ public class Pursue : State
             // check if AI is within attack range of player, then move to Attack state
             if (CanAttackPlayer())
             {
-                nextState = new Attack(npc, agent, anim, player);
+                nextState = new StateAttack(npc, agent, anim, player);
                 stage = EVENT.EXIT;
             }
             // if AI lost sight of the player, then exit pursue stat and go Idle
             else if (!CanSeePlayer())
             {
-                nextState = new Idle(npc, agent, anim, player);
+                nextState = new StateIdle(npc, agent, anim, player);
                 stage = EVENT.EXIT;
             }
         }

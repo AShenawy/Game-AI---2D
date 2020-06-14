@@ -19,7 +19,7 @@ public class AI : MonoBehaviour
         anim = GetComponent<Animator>();
 
         // Set AI's starting state as Idle
-        currentState = new Idle(this.gameObject, agent, anim, player);
+        currentState = new StateIdle(this.gameObject, agent, anim, player);
     }
 
     // Update is called once per frame
