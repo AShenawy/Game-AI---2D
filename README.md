@@ -1,5 +1,5 @@
 # Game AI - Unity Engine
- AI design project using Unity Engine for 'Artificial Intelligence for Games' course 
+ AI design project using Unity Engine for 'Artificial Intelligence for Games' course. A pdf version of this document with images can be found in the 'Documentation' folder. A video recording the scenes and what is expected is available in the 'Video' folder.
 
 ## Introduction
 This project implements AI Behaviour in Unity game engine. This is made for the 'Artificial Intelligence for Games' course in Tallinn University.
