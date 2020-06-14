@@ -1,4 +1,4 @@
-# Game_AI-2D
+# Game AI - Unity Engine
  AI design project using Unity Engine for 'Artificial Intelligence for Games' course 
 
 ## Introduction
