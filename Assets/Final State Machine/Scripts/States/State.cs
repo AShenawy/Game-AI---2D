@@ -6,7 +6,7 @@ using UnityEngine.AI;
 // This script acts as base for the state machine for AI character
 public class State
 {
-    public enum STATE { IDLE, PATROL, PURSUE, ATTACK, SLEEP };  // set enum for all AI states in game play
+    public enum STATE { IDLE, PATROL, PURSUE, ATTACK };  // set enum for all AI states in game play
 
     public enum EVENT { ENTER, UPDATE, EXIT };  // reference to the 3 stages a state node can be in
 
